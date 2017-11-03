@@ -160,7 +160,11 @@ f3() # 9
 
 # 函数对象有一个__name__属性
  now.__name__
-# 装饰器
+
+# 装饰器 详情见例子 practise_decorate.py
+# 
+
+# 
 # 偏函数
 # 当函数的参数个数太多，需要简化时，使用functools.partial可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单。
 import functools
