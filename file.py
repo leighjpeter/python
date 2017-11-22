@@ -39,3 +39,40 @@ from io import BytesIO
 f = BytesIO()
 f.write('中文'.encode('utf-8'))
 print(f.getvalue())
+
+# os
+import os
+os.name # operating system
+os.environ # 环境变量
+os.environ.get('key')
+
+# 操作文件和目录
+os.path.abspath('.')
+os.path.join('/vagrant','testdir') # /vagrant/testdir
+os.mkdir('/vagrant/testdir')
+os.rmdir('/vagrant/testdir')
+
+# 路径拆分，合并 不要当字符串去处理
+# 路径的拆分，合并 不要求目录和文件真实存在
+os.path.join()
+os.path.split('/vagrant/testdir') # ('/vagrant', 'testdir')
+os.path.splitext('/vagrant/testdir/a.txt') # 获取扩展名 ('/vagrant/testdir/a', '.txt'
+
+# 复制 shutil模块提供了copyfile()的函数
+shutil.copy()
+
+[x for x in os.listdir('.') if os.path.isdir(x)]
+
+[x for x in os.listdir('.') if os.path.splitext(x)[1] == '.py']
+
+
+# 查找文件 searchFile.py
+
+
+
+
+
+
+
+
+
