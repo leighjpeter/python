@@ -49,7 +49,7 @@ print(10 / n)
 # ZeroDivisionError: division by zero
 
 
-# 调试器 pdb 
+# 调试器 pdb  可以设置断点
 # python -m pdb debug.py
 # 命令 l 查看代码
 # 命令 n 单步执行代码
