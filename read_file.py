@@ -37,4 +37,14 @@ wordObj = BeautifulSoup(xml_content.decode('utf-8'),"lxml")
 textStrings = wordObj.findAll("w:t")
 # print(textStrings)
 for textElem in textStrings:
-	print(textElem.text)
+	for textElem in textStrings:
+		closeTag = ""
+		try:
+			style = textElem.parent.previousSibling.find("w:pstyle")
+			if style is not None and style["w:val"] == "Title":
+				print("<h1>")
+				closeTag = "</h1>"
+		except AttributeError:     #不打印标签
+			pass
+		print(textElem.text)
+		print(closeTag)
