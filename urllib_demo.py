@@ -68,19 +68,3 @@ data = fetch_data(URL)
 print(data)
 assert data['query']['results']['channel']['location']['city'] == 'Beijing'
 print('ok')
-
-
-
-
-# 强大的Requests
-import requests
-r = requests.get('https://www.douban.com/search', params={'q': 'python', 'cat': '1001'})
-r = requests.post('https://accounts.douban.com/login', data={'form_email': 'abc@example.com', 'form_password': '123456'})
-
-r.url
-r.encoding
-r.content
-r.text
-r.json()
-r.headers
-r.cookies[]
