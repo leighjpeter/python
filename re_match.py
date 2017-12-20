@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # 正则
-# 
-# 
+#
+#
 import re
 # re.match()
 # 切分字符串

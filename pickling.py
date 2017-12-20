@@ -9,7 +9,7 @@ d = dict(name='Bob',age=20,score=80)
 pickle.dumps(d)
 # pickle.dump()方法把任意对象序列化后写入一个file-like Object
 f = open('dump.txt', 'wb')
-pickle.dump(d,f) 
+pickle.dump(d,f)
 f.close()
 
 # 反序列化
@@ -20,7 +20,7 @@ f.close()
 import json
 d = dict(name='Bob',age=20,score=80)
 json.dumps(d) # '{"name": "Bob", "age": 20, "score": 90}'
-json.dump() 
+json.dump()
 json_str = '{"name": "Bob", "age": 20, "score": 90}'
 json.loads(json_str)  #{'name': 'Bob', 'age': 20, 'score': 90}
 json.load()

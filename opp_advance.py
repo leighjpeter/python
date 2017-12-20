@@ -9,7 +9,7 @@ import types
 def fn():
 	pass
 
-type(fn) == types.FunctionType 
+type(fn) == types.FunctionType
 type(abs) == types.BuiltinFunctionType
 type(lambda x:x) == types.LambdaType
 type(x for x in range(10)) == types.GeneratorType
@@ -29,12 +29,12 @@ isinstance((1, 2, 3), (list, tuple)) # True
 
 # 实例属性 类属性
 
-# 
-# __slots__ 
+#
+# __slots__
 # __slots__ = ('name', 'age') # 用tuple定义允许绑定的属性名称
 # 仅对当前类实例起作用
 
-# __str__() 
+# __str__()
 # __repr__()
 # __iter__()
 # __getitem__()
@@ -42,7 +42,7 @@ isinstance((1, 2, 3), (list, tuple)) # True
 # __delitem__()
 # __getattr__()
 # __call__()
-# 
+#
 
 
 

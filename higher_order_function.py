@@ -70,7 +70,7 @@ def _not_divisible(n):
 
 # 定义一个生成器，不断返回下一个素数：
 def primes():
-	yield 2 
+	yield 2
 	it = _odd_iter() # 初始序列
 	while True:
 		n = next(it) # 返回序列的第一个数
@@ -84,7 +84,7 @@ def main():
             print(n)
         else:
             break
-            
+
 if __name__ == '__main__':
     main()
 
@@ -103,14 +103,14 @@ def is_palindrome(n):
     new = list(str(n))
     new.reverse()
     return n == int(''.join(new))   # ''.join(new)  list2str
-    
+
 output = filter(is_palindrome, range(1, 1000))
 print(list(output))
 
 
 
 # sorted 高阶函数  sorted(序列, key='', reverse=True)
-# 
+#
 # sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
 
 L = [('Bob', 75), ('Adam', 92), ('bart', 66), ('Lisa', 88)]
@@ -162,9 +162,9 @@ f3() # 9
  now.__name__
 
 # 装饰器 详情见例子 practise_decorate.py
-# 
+#
 
-# 
+#
 # 偏函数
 # 当函数的参数个数太多，需要简化时，使用functools.partial可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单。
 import functools

@@ -16,7 +16,7 @@ a = power(x)
 print(a)
 
 # 定义默认参数，必须指向不变对象
-# 
+#
 def add_end(l=[]):
 	l.append('end')
 	return l
@@ -58,20 +58,22 @@ extra = {'city':'hz','job':'engineer'}
 person('leighj','26',city=extra['city']) ## name: leighj age: 26 other: {'city': 'hz'}
 person('leighj','26',**extra) # name: leighj age: 26 other: {'city': 'hz', 'job': 'engineer'}
 
-# 命名关键字参数      限制关键字参数的名字 只接受  city job 
+# 命名关键字参数      限制关键字参数的名字 只接受  city job
 # 命名关键字参数需要一个特殊分隔符*，*后面的参数被视为命名关键字参数。
-def animal(name,age,*,city,job):
+def person(name,age,*,city,job):
 	print(name,age,city,job)
 
 # 如果函数定义中已经有一个可变参数，后面跟着的命名关键字参数就不需要一个特殊分隔符了
-def animal(name,age,*args,city,job):
-	print(name,age,city,job)
+def person(name,age,*args,city,job):
+	print(name,age,args,city,job)
+
 person('Jack', 24, city='hangzhou', job='Engineer') # Jack 24 () hangzhou Engineer
 
 # 命名关键字参数可以有缺省值，命名关键字参数必须传入参数名
-def animal(name,age,*args,city='hangzhou',job):
-	print(name,age,city,job)
-person('Jack', 24, job='Engineer') # Jack 24 hangzhou Engineer
+def person(name,age,*args,city='hangzhou',job):
+	print(name,age,args,city,job)
+
+person('Jack', 24, job='Engineer') # Jack 24 () hangzhou Engineer
 
 
 # 参数组合
