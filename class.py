@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # 在类中定义的函数，第一个参数必须是实例变量self
-# __xxx private 
+# __xxx private
 # _xxx 可被访问但是不要随意访问
 # __xxx__ 特殊变量
 class Student(object):
@@ -19,10 +19,10 @@ bart.print_score()
 lisa.print_score()
 
 
-# 继承  
+# 继承
 # "鸭子类型" 不需要严格的继承
 # 开闭原则：对扩展开放，对修改封闭
-# 
+#
 class Animal(object):
     def run(self):
         print('Animal is running...')
@@ -60,7 +60,7 @@ run_twice(t)
 
 # class Dog(Animal,Runnable):
 # 	pass
-		
+
 # MixIn
 # MixIn的目的就是给一个类增加多个功能,是的设计类的时候不是去设计复杂的继承关系
 # class Dog(Mammal, RunnableMixIn, CarnivorousMixIn):

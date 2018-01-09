@@ -19,7 +19,7 @@ class_t = ('a','b','c',['A','B'])
 class_t[3][0] = 'C';
 print(class_t) # ('a', 'b', 'c', ['C', 'B'])
 
-# dict {}key-value  
+# dict {}key-value
 # value可覆盖，但是不能没有key
 # key必须是不可变对象
 d = {'mike':99,'bob':80}
