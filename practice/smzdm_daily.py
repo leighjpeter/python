@@ -24,7 +24,7 @@ class SMZDMDailyException(Exception):
         return str(self.req)
 
 class SMZDMDaily(object):
-    BASE_URL = 'https://zhiyou.smzdm.com'
+    BASE_URL = 'https://zhiyou.smzdm.com' 
     LOGIN_URL = BASE_URL + '/user/login/ajax_check'
     CHECKIN_URL = BASE_URL + '/user/checkin/jsonp_checkin'
 

@@ -1,0 +1,42 @@
+
+# 术语表
+
+complex number 复数
+derived class 导出类
+escape sequence 转义符
+field 域
+indentation 缩进
+indexing 索引
+instance 实例
+list comprehension 列表综合
+literal constant 字面意义上的常量
+operand 操作数
+pickle 储存器
+sequence 序列
+slicing 切片
+
+# 运算符优先级
+lambda
+or
+and
+not
+in,not in
+is,is not
+<,>,<=,>=,!=,==
+|
+^
+&
+<<,>>
++,-
+*,/,%
++x,-x 正负号
+~x 按位翻转
+** 指数
+x.attribute 属性参开
+x[index] 下标
+x[index:index] 寻址段
+f(argument) 函数
+(expression) 表达式
+[expression] 列表显示
+{key:datum} 字典显示
+'expression' 字符转换
