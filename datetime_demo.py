@@ -63,3 +63,15 @@ bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
 print(bj_dt) # 2017-11-30 17:13:52.826238+08:00
 
 print(bj_dt.strftime('%Y-%m-%d'))
+
+
+
+
+
+# 格式化时间
+print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+# 2018-05-30 15:47:24
+
+localtime = time.asctime( time.localtime(time.time()) )
+print("本地时间为 :%s" %localtime)
+# Wed May 30 15:49:08 2018

@@ -9,6 +9,7 @@ def char2num(s):
 	return	{'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}[s]
 
 from functools import reduce
+
 def add(x,y):
 	return x+y
 
@@ -106,7 +107,7 @@ def is_palindrome(n):
 
 output = filter(is_palindrome, range(1, 1000))
 print(list(output))
-
+# 是否是回文数
 
 
 # sorted 高阶函数  sorted(序列, key='', reverse=True)

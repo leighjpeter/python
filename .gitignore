@@ -1,2 +1,7 @@
 .python-version
 __pycache__
+.DS_Store
+.env
+*.log
+selenium
+github_project

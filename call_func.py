@@ -109,11 +109,15 @@ f2(*args,**kw) # a = 1 b = 2 c = 3 d = 99 kw = {'x': '#'}
 # 使用递归函数需要注意防止栈溢出
 # 解决递归调用栈溢出的方法是通过尾递归优化，事实上尾递归和循环的效果是一样的
 # 尾递归是指在函数返回的时候调用函数本身，并且return语句不能包含表达式
-
+# python解释器没有针对尾递归做优化，so任何递归函数都存在栈溢出的问题
 def fact(n):
 	if n == 1:
 		return 1
 	return n * fact(n-1)
+
+# fact(1000) RecursionError: maximum recursion depth exceeded in comparison 导致栈溢出
+
+
 
 
 def fact(n):
@@ -123,6 +127,9 @@ def fact_iter(num,product):
 	if num == 1:
 		return product
 	return fact_iter(num-1,num*product)
+
+
+
 
 def move(n,a,b,c):
 	if n == 1:
