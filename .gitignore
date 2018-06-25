@@ -5,3 +5,4 @@ __pycache__
 *.log
 /github_project/
 /selenium/
+/ceo/.env
