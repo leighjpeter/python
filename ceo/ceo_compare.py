@@ -5,6 +5,7 @@
 # 写入txt
 import requests
 import re
+import os
 from retrying import retry
 
 import pymysql.cursors
