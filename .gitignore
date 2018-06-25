@@ -3,7 +3,5 @@ __pycache__
 .DS_Store
 .env
 *.log
+/github_project/
 /selenium/
-github_project
-!/selenium/ceo_top100.py
-!/selenium/coo_top100.py
