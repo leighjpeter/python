@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+
 # 内置函数
 # https://docs.python.org/3/library/functions.html#abs
 # 位置参数
-
 
 x = int(input('数字:'))
 def power(x,n=2):
@@ -51,6 +52,9 @@ calc(*nums) # 14
 #
 
 # 关键字参数
+# *args是可变参数，args接收的是一个tuple
+# **kw是关键字参数，kw接收的是一个dict
+
 def person(name,age,**kw):
 	print('name:', name, 'age:', age, 'other:',kw)
 

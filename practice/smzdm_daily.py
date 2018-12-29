@@ -10,7 +10,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO,format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
-                filename='/vagrant/github_project/smzdm/smzdm.log',
+                filename='/Users/jessica/Dev/python/practice/smzdm.log',
                 filemode='a')
 
 SMZDM_USERNAME = os.getenv('SMZDM_DAILY_USERNAME') or '' # username or email
@@ -32,12 +32,14 @@ class SMZDMDaily(object):
         self.username = username
         self.password = password
         self.session = requests.Session()
+        self.session.keep_alive = False
 
     def checkin(self):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0',
             'Host': 'zhiyou.smzdm.com',
-            'Referer': 'http://www.smzdm.com/'
+            'Referer': 'http://www.smzdm.com/',
+            'Connection':'close'
         }
 
         params = {
