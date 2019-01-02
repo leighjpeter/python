@@ -6,3 +6,5 @@ __pycache__
 /github_project/
 /selenium/
 /ceo/.env
+.vscode/
+*.txt

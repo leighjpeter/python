@@ -40,3 +40,41 @@ class Dict(dict):
 
 	def __setattr__(self, key, value):
 		self[key] = value
+
+
+
+import unittest
+# 一个要测试的方法
+from unit_name_function import get_formatted_name
+
+class NamesTestCase(unittest.TestCase):
+	"""测试name_function.py"""
+	def test_first_last_name(self):
+		formatted_name = get_formatted_name('janis', 'joplin')
+		self.assertEqual(formatted_name,'Janis Joplin')
+
+
+# 一个要测试的类
+
+from unit_survey_class import AnonymousSurvey
+
+class TestAnonymousSurvey(unittest.TestCase):
+	""" 对AnonymousSurvey类的测试"""
+
+	def setUp(self):
+		question = "What language did you first learn to speak?"
+		self.my_survey = AnonymousSurvey(question)
+		self.responses = ['English','Spanish','Mandarin']
+
+	def test_store_single_respinse(self):
+		self.my_survey.store_response(self.responses[0])
+		self.assertIn(self.responses[0],self.my_survey.responses)
+
+	def test_store_three_response(self):
+		for response in self.responses:
+			self.my_survey.store_response(response)
+		for response in self.responses:
+			self.assertIn(response,self.my_survey.responses)
+unittest.main()
+
+

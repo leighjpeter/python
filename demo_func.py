@@ -2,17 +2,21 @@
 # -*- coding: utf-8 -*-
 
 
-# 内置函数
-# https://docs.python.org/3/library/functions.html#abs
-# 位置参数
+def mobile(mobile,**detailed):
+	# print('mobile:',mobile,'detailed:',detailed)
+	print('mobile:{},detailed:{}'.format(mobile,detailed))
 
+mobile('iphone8',price=800,cpu=4)
+
+# 内置函数
+# 位置参数
 x = int(input('数字:'))
 def power(x,n=2):
 	s = 1
 	while n > 0:
 		n = n-1
 		s = s * x
-	return s;
+	return s
 a = power(x)
 print(a)
 
@@ -26,13 +30,13 @@ add_end() #[end]
 add_end() #[end,end]
 
 
-def calc(numbers):
+def calc_base(numbers):
 	sum = 0
 	for n in numbers:
 		sum = sum + n*n
 	return sum
 
-calc([1,2]) # 5
+calc_base([1,2]) # 5
 
 # 可变参数
 def calc(*numbers): # 参数numbers接收到的是一个tuple
@@ -107,7 +111,8 @@ f2(*args,**kw) # a = 1 b = 2 c = 3 d = 99 kw = {'x': '#'}
 
 # 可变参数既可直接传入func(1,2,3) 又可先组装list或tuple 再通过*args传入 func(*(1,2,3))
 # 关键字参数既可直接传入 func(a=1,b=2) 又可先组装dist再通过**kw传入 func(**{'a':1,'b':2})
-
+# 列表传递给函数后，函数对列表所做的修改都是永久性的。 可以通过传递列表副本，保持原列表不变
+# function_name(list_name[:])
 
 # 递归函数
 # 使用递归函数需要注意防止栈溢出
@@ -122,9 +127,7 @@ def fact(n):
 # fact(1000) RecursionError: maximum recursion depth exceeded in comparison 导致栈溢出
 
 
-
-
-def fact(n):
+def fact_better(n):
     return fact_iter(n, 1)
 
 def fact_iter(num,product):

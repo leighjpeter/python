@@ -35,11 +35,11 @@ with open('request_read.txt', 'wb') as fd:
 # POST 请求
 payload = {'key1': 'value1', 'key2': 'value2'}
 payload = (('key1', 'value1'), ('key1', 'value2'))  #传入一个元组列表。在表单中多个元素使用同一 key 的时候
-r = requests.post("http://httpbin.org/post", data=payload)
+r = requests.post(url='http://httpbin.org/post', data=payload)
 payload = {'some': 'data'}
-r = requests.post(url, json=payload)
+r = requests.post(url='http://httpbin.org/post', json=payload)
 files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
-r = requests.post(url, files=files)
+r = requests.post(url='http://httpbin.org/post', files=files)
 print(r.text)
 
 # 会话对象

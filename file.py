@@ -22,10 +22,10 @@
 # f = open('test.txt','wb')
 # f.write()
 # f.close()
-with open('test.txt','w+') as f:
-	f.write('撒旦撒旦sadsdadsda')
+with open('test.txt','a+') as f:
+	f.write('撒旦撒旦sadsdadsda\n')
 
-
+exit()
 # StringIO和BytesIO是在内存中操作str和bytes的方法
 from io import StringIO
 f = StringIO()

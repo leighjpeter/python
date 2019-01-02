@@ -48,38 +48,42 @@ del t1
 # dict {}key-value
 # value可覆盖，但是不能没有key
 # key必须是不可变对象
-dict内部存放的顺序和key放入的顺序是没有关系的
-dict查找和插入的速度极快，不会随着key的增加而增加，但是需要占用大量的内存，内存浪费多
-dict的key必须是不可变对象
+#dict内部存放的顺序和key放入的顺序是没有关系的
+#dict查找和插入的速度极快，不会随着key的增加而增加，但是需要占用大量的内存，内存浪费多
+
 # ===========常见操作=============== #
 # D.clear() 删除字典内所有元素
 # D.copy() 返回一个字典的复制
-# D.fromkeys(seq,val) 创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
-# D.get(key, default=None) 返回指定键的值，如果值不在字典中返回default值
+# dict.fromkeys(iterable[,value=None])创建一个新字典，以iterable中元素做字典的键，value为字典所有键对应的初始值
 # D.has_key(key) 如果键在字典dict里返回true，否则返回false
 # D.items() 以列表返回可遍历的(键, 值) 元组数组
 # D.keys() 以列表返回一个字典所有的键
+# D.values() 以列表返回字典中的所有值
 # D.setdefault(key, default=None) 和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
 # D.update(dict2) 把字典dict2的键/值对更新到dict里
-# D.values() 以列表返回字典中的所有值
 # D.pop(key) 删除一个键并返回它的值，类似于列表的pop,只不过删除的是一个键不是一个可选的位置
 # del D[key] 删除键
 # D[key] = 42 新增或修改键
+# OrderedDict模块可以记录添加的顺序，兼具列表和字典的优点
 # ===========常见操作=============== #
 
 d = {'mike':99,'bob':80}
-print(d['mike'])
 # 判断key是否存在
 print('mike' in d)
 print(d.get('bob'))
-
-d['bo'] = class_t
+# D.get(key, default=None) 返回指定键的值，如果值不在字典中返回default值
 print(d.get('bo',0))
 
 d[(1,)] = 2121 # special tuple 可作为dist的key
-print(d) # {'mike': 99, 'bob': 80, 'bo': ('a', 'b', 'c', ['C', 'B']), (1,): 2121}
-print(d.pop('bob'))
-print(d)
+# dict.fromkeys(iterable[,value=None])创建一个新字典，以iterable中元素做字典的键，value为字典所有键对应的初始值
+iterable1 = '12'
+iterable2 = [1,2]
+iterable3 = (1,2)
+iterable4 = {1:'one',2:'two'}
+v1 = dict.fromkeys(iterable1,'字符串') # {'1': '字符串', '2': '字符串'}
+v2 = dict.fromkeys(iterable2,'列表') # {'1': '列表', '2': '列表'}
+v3 = dict.fromkeys(iterable3,'元祖') # {'1': '元祖', '2': '元祖'}
+v4 = dict.fromkeys(iterable4,'列表') # {'1': None, '2': None}
 
 # set 没有重复的key，重复元素自动过滤
 # 需要提供一个list
@@ -112,10 +116,13 @@ list1 = [3,5,-4,-1,0,-2,-6]
 sorted(list1, key=lambda x: abs(x))
 
 def get_y(a,b):
-	return lambda x:ax+b
-y1 = get_y(1,1)
+	return lambda x:a*x+b
+y = get_y(1,1)
 
-
-
-
-
+## 等价于
+def	get_y_l(a,b):
+	def func(x):
+		return a*x+b
+	return func
+y = get_y_l(1,1)
+y(1) # 2
