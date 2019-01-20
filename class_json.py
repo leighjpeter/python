@@ -17,3 +17,5 @@ cls_b.name = 'name_b'
 
 print(cls_a.__dict__)
 print(cls_b.__dict__)
+
+print(dir(cls_a))

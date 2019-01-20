@@ -79,8 +79,12 @@ from collections import OrderedDict
 
 favorite_languages = OrderedDict()
 favorite_languages['jen'] = 'python'
-favorite_languages['sarah'] = 'java'
 favorite_languages['phil'] = 'php'
+favorite_languages['sarah'] = 'java'
 
 for name, language in favorite_languages.items():
     print(name.title() + "'s favorite language is " + language.title() + '.')
+
+f={'jen':'python','sarah':'java','phil':'php'}
+
+print(f)
