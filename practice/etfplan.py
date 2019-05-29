@@ -101,6 +101,7 @@ def get_funds(retry = 10):
     funds.remove("000614")  #德国DAX， 没数据
     funds.remove("501018")  #南方原油，猪队友，不要不要的
     funds.remove("001061")  #华夏海外债券 没数据
+    funds.remove("110027")  #易方达安心回报债券A
     return funds
 
 #计算天数差

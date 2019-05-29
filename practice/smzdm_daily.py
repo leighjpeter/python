@@ -25,7 +25,7 @@ class SMZDMDailyException(Exception):
 
 class SMZDMDaily(object):
     BASE_URL = 'https://zhiyou.smzdm.com' 
-    LOGIN_URL = BASE_URL + '/user/login/ajax_check'
+    LOGIN_URL = BASE_URL + '/user/login/jsonp_is_protocol'
     CHECKIN_URL = BASE_URL + '/user/checkin/jsonp_checkin'
 
     def __init__(self, username, password):
@@ -39,7 +39,8 @@ class SMZDMDaily(object):
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0',
             'Host': 'zhiyou.smzdm.com',
             'Referer': 'http://www.smzdm.com/',
-            'Connection':'close'
+            'Connection':'close',
+            'Cookie':'__ckguid=SFH5XG4UUbxKqBnQoWeFl43; smzdm_user_source=AE1214872282BB4D7A289D1AED648BB2; _ga=GA1.2.69308297.1521736089; device_id=19420365471521736089307441a18e7c0bb9b50cd4157cd9ac8c6d18b6; __jsluid=fd86ba55c7b30717622e0493679f836c; smzdm_user_view=E2AC582906290742C9DBE6D83BB9A9FE; Hm_lvt_9b7ac3d38f30fe89ff0b8a0546904e58=1548235211; wt3_sid=%3B999768690672041; PHPSESSID=e6aeba5f9b4c6f54af0d7c502ea38803; wt3_eid=%3B999768690672041%7C2152406605500665183%232154823521900676697; zdm_qd=%7B%7D; _gid=GA1.2.1283114500.1548660786; Hm_lpvt_9b7ac3d38f30fe89ff0b8a0546904e58=1548661894; _gat_UA-27058866-1=1; sess=NjlkNGJ8MTU1Mzg0NTk0MXw3OTgxNjYyMTkyfGMzN2ZjNTNmOTg4NjBmZWZmY2ZjOTVlM2I4MzVjZjVl; user=user%3A7981662192%7C7981662192'
         }
 
         params = {
@@ -47,8 +48,8 @@ class SMZDMDaily(object):
             'password': self.password,
         }
 
-        r = self.session.get(self.BASE_URL, headers=headers, verify=True)
-        r = self.session.post(self.LOGIN_URL, data=params, headers=headers, verify=True)
+        # r = self.session.get(self.BASE_URL, headers=headers, verify=True)
+        # r = self.session.post(self.LOGIN_URL, headers=headers, verify=True)
         r = self.session.get(self.CHECKIN_URL, headers=headers, verify=True)
         if r.status_code != 200:
             raise SMZDMDailyException(r)
@@ -58,9 +59,9 @@ class SMZDMDaily(object):
         return jdata
 
 if __name__ == '__main__':
-    if SMZDM_USERNAME is '' or SMZDM_PASSWORD is '':
-        print('SMZDM_USERNAME and SMZDM_PASSWORD required')
-        sys.exit()
+    # if SMZDM_USERNAME is '' or SMZDM_PASSWORD is '':
+    #     print('SMZDM_USERNAME and SMZDM_PASSWORD required')
+    #     sys.exit()
     try:
         smzdm = SMZDMDaily(SMZDM_USERNAME, SMZDM_PASSWORD)
         result = smzdm.checkin()
